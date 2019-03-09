@@ -1,13 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Globe Bank</title>
-</head>
-<body>
-<h1>Globe Bank Coming Soon...</h1>
-</body>
-</html>
+<?php
+// Include initialize.php to initialize all the needed functions before page load
+require_once '../../../private/initialize.php';
+?>
+
+<?php $page_title = "Subject"; ?>
+<?php include SHARED_PATH. '/staff_header.php' ?>
+
+<main>
+    <div>Main Content: Coming Soon</div>
+</main>
+
+<?php include SHARED_PATH. '/staff_footer.php' ?>
