@@ -47,7 +47,28 @@ header h1 {
     padding: 0;
     margin: 0;
 }
+/*****************
 
+      NAVIGATION
+
+*****************/
+
+nav{
+    font-size: 1.2rem;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+}
+/*****************
+
+      STAFF
+
+*****************/
+
+main#staff {
+    text-align: center;
+}
 /*****************
 
       Common for SUBJECTS, SUBJECT, PAGES, PAGE
@@ -62,6 +83,12 @@ main h1 {
     font-size: 2.2rem;
 }
 
+main ul {
+    list-style: none;
+}
+main ul li {
+    margin:5px;
+}
 .actions {
     margin-bottom: 10px;
 }

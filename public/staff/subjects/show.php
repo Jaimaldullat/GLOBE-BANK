@@ -3,6 +3,8 @@
 <?php
 // $id = isset($_GET['id']) ? $_GET['id'] : '1';
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
+
+$subject = find_subject_by_id($id);
 ?>
 
 <?php $page_title = 'Show Subject'; ?>
@@ -14,8 +16,12 @@ $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
     <div class="subject show">
 
-        Page ID: <?php echo h($id); ?>
-
+       <h1>Subject: <?php echo h($subject['menu_name']); ?></h1>
+            <table >
+                <tr><td>Menu Name:</td> <td><?php echo h($subject['menu_name']); ?></td></tr>
+                <tr><td>Position:</td> <td><?php echo h($subject['position']); ?></td></tr>
+                <tr><td>Visible:</td> <td><?php echo $subject['visible'] == '1' ? 'True' : 'False'; ?></td></tr>
+            </table></li>
     </div>
 
 </main>

@@ -3,3 +3,6 @@
 </footer>
 </body>
 </html>
+<?php
+db_dissconnect($db);
+?>

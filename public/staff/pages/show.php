@@ -3,6 +3,8 @@
 <?php
 // $id = isset($_GET['id']) ? $_GET['id'] : '1';
 $id = $_GET['id'] ?? '1'; // PHP > 7.0
+$page = find_page_by_id($id);
+$subject = find_subject_by_id($page['subject_id']);
 ?>
 
 <?php $page_title = 'Show Page'; ?>
@@ -14,7 +16,14 @@ $id = $_GET['id'] ?? '1'; // PHP > 7.0
 
     <div class="page show">
 
-        Page ID: <?php echo h($id); ?>
+        <h1>Page: <?php echo h($page['menu_name']); ?></h1>
+        <table >
+            <tr><td>Menu Name:</td> <td><?php echo h($page['menu_name']); ?></td></tr>
+            <tr><td>Subject:</td> <td><?php echo h($subject['menu_name']); ?></td></tr>
+            <tr><td>Position:</td> <td><?php echo h($page['position']); ?></td></tr>
+            <tr><td>Visible:</td> <td><?php echo $page['visible'] == '1' ? 'True' : 'False'; ?></td></tr>
+            <tr><td>Content:</td> <td><?php echo h($page['content']); ?></td></tr>
+        </table>
 
     </div>
 
