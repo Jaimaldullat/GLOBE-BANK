@@ -25,7 +25,21 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+/* Errors */
 
+.errors {
+    display: inline-block;
+    border: 2px solid red;
+    color: red;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.errors ul {
+    margin-bottom: 0;
+    padding-left: 1em;
+    list-style: circle;
+}
 /*****************
 
       HEADER

@@ -15,7 +15,7 @@ $page_set = find_all_pages();
         <table class="list">
             <tr>
                 <th>ID</th>
-                <th>Subject ID</th>
+                <th>Subject</th>
                 <th>Position</th>
                 <th>Visible</th>
                 <th>Name</th>
