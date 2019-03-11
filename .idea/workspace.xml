@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="488c6b14-4a7a-452f-880b-9c15b95d647e" name="Default Changelist" comment="Added Basic Structure Files" />
+    <list default="true" id="488c6b14-4a7a-452f-880b-9c15b95d647e" name="Default Changelist" comment="Added Basic Structure Files">
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,15 +80,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/staff.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/private/validation_functions.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
@@ -94,6 +87,15 @@
               <folding>
                 <element signature="e#6#24#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -186,6 +188,7 @@
         <option value="$PROJECT_DIR$/public/staff/pages/index.php" />
         <option value="$PROJECT_DIR$/public/staff/pages/new.php" />
         <option value="$PROJECT_DIR$/private/query_functions.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -213,44 +216,7 @@
             <path>
               <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
               <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="private" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-              <item name="subjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,7 +275,7 @@
       <option name="presentableId" value="Default" />
       <updated>1552060069016</updated>
       <workItem from="1552060070688" duration="11531000" />
-      <workItem from="1552142415111" duration="40136000" />
+      <workItem from="1552142415111" duration="40593000" />
     </task>
     <task id="LOCAL-00001" summary="Added Basic Structure Files">
       <created>1552060641867</created>
@@ -329,7 +295,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51667000" />
+    <option name="totallyTimeSpent" value="52124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -592,6 +558,13 @@
           <folding>
             <element signature="e#6#24#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
         </state>
       </provider>
     </entry>
