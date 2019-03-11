@@ -4,5 +4,5 @@
 </body>
 </html>
 <?php
-db_dissconnect($db);
+db_disconnect($db);
 ?>

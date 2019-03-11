@@ -40,6 +40,10 @@ body {
     padding-left: 1em;
     list-style: circle;
 }
+.push {
+    height: 0px;
+    clear: both;
+}
 /*****************
 
       HEADER

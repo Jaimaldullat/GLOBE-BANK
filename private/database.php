@@ -8,11 +8,16 @@ function db_connect(){
     return $connection;
 }
 // Close a connection to the database
-function db_dissconnect($connection){
+function db_disconnect($connection){
     if(isset($connection)){
         mysqli_close($connection);
     }
 }
+// Custom short function for escaping characters
+function db_escape($connection, $string) {
+    return mysqli_real_escape_string($connection, $string);
+}
+
 // Confirm if database connected successfully
 function confirm_db_connect(){
     if(mysqli_connect_errno()){

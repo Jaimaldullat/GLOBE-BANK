@@ -15,7 +15,7 @@ function find_subject_by_id($id)
 {
     global $db;
     $sql = "SELECT * FROM subjects ";
-    $sql .= "WHERE id='" . $id . "'";
+    $sql .= "WHERE id='" . db_escape($db,$id) . "'";
     $result = mysqli_query($db, $sql);
     confirm_result($result);
     $subject = mysqli_fetch_assoc($result);
@@ -36,9 +36,9 @@ function insert_subject($subject)
     $sql = "INSERT INTO subjects ";
     $sql .= "(menu_name, position, visible) ";
     $sql .= "VALUES (";
-    $sql .= "'" . $subject['menu_name'] . "',";
-    $sql .= "'" . $subject['position'] . "',";
-    $sql .= "'" . $subject['visible'] . "'";
+    $sql .= "'" . db_escape($db,$subject['menu_name']) . "',";
+    $sql .= "'" . db_escape($db,$subject['position']) . "',";
+    $sql .= "'" . db_escape($db,$subject['visible']) . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     // For insert statements result is True or False
@@ -63,10 +63,10 @@ function update_subject($subject)
     }
 
     $qry = "UPDATE subjects SET ";
-    $qry .= "menu_name='" . $subject['menu_name'] . "', ";
-    $qry .= "position='" . $subject['position'] . "', ";
-    $qry .= "visible='" . $subject['visible'] . "' ";
-    $qry .= "WHERE id='" . $subject['id'] . "' ";
+    $qry .= "menu_name='" . db_escape($db,$subject['menu_name']) . "', ";
+    $qry .= "position='" . db_escape($db,$subject['position']) . "', ";
+    $qry .= "visible='" . db_escape($db,$subject['visible']) . "' ";
+    $qry .= "WHERE id='" . db_escape($db,$subject['id']) . "' ";
     $qry .= "LIMIT 1";
 
     $result = mysqli_query($db, $qry);
@@ -87,7 +87,7 @@ function delete_subject($id) {
     global $db;
 
     $sql = "DELETE FROM subjects ";
-    $sql .= "WHERE id='" . $id . "' ";
+    $sql .= "WHERE id='" . db_escape($db,$id) . "' ";
     $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
 
@@ -132,6 +132,7 @@ function validate_subject($subject) {
 
     return $errors;
 }
+
 // Find all pages
 function find_all_pages()
 {
@@ -148,13 +149,14 @@ function find_page_by_id($id)
 {
     global $db;
     $sql = "SELECT * FROM pages ";
-    $sql .= "WHERE id='" . $id . "'";
+    $sql .= "WHERE id='" . db_escape($db,$id) . "'";
     $result = mysqli_query($db, $sql);
     confirm_result($result);
     $page = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
     return $page; // Return assoc array
 }
+
 // Validate page
 function validate_page($page) {
     $errors = [];
@@ -212,11 +214,11 @@ function insert_page($page) {
     $sql = "INSERT INTO pages ";
     $sql .= "(subject_id, menu_name, position, visible, content) ";
     $sql .= "VALUES (";
-    $sql .= "'" . $page['subject_id'] . "',";
-    $sql .= "'" . $page['menu_name'] . "',";
-    $sql .= "'" . $page['position'] . "',";
-    $sql .= "'" . $page['visible'] . "',";
-    $sql .= "'" . $page['content'] . "'";
+    $sql .= "'" . db_escape($db,$page['subject_id']) . "',";
+    $sql .= "'" . db_escape($db,$page['menu_name']) . "',";
+    $sql .= "'" . db_escape($db,$page['position']) . "',";
+    $sql .= "'" . db_escape($db,$page['visible']) . "',";
+    $sql .= "'" . db_escape($db,$page['content']) . "'";
     $sql .= ")";
     $result = mysqli_query($db, $sql);
     // For INSERT statements, $result is true/false
@@ -229,6 +231,7 @@ function insert_page($page) {
         exit;
     }
 }
+
 // Update a page
 function update_page($page) {
     global $db;
@@ -239,12 +242,12 @@ function update_page($page) {
     }
 
     $sql = "UPDATE pages SET ";
-    $sql .= "subject_id='" . $page['subject_id'] . "', ";
-    $sql .= "menu_name='" . $page['menu_name'] . "', ";
-    $sql .= "position='" . $page['position'] . "', ";
-    $sql .= "visible='" . $page['visible'] . "', ";
-    $sql .= "content='" . $page['content'] . "' ";
-    $sql .= "WHERE id='" . $page['id'] . "' ";
+    $sql .= "subject_id='" . db_escape($db,$page['subject_id']) . "', ";
+    $sql .= "menu_name='" . db_escape($db,$page['menu_name']) . "', ";
+    $sql .= "position='" . db_escape($db,$page['position']) . "', ";
+    $sql .= "visible='" . db_escape($db,$page['visible']) . "', ";
+    $sql .= "content='" . db_escape($db,$page['content']) . "' ";
+    $sql .= "WHERE id='" . db_escape($db,$page['id']) . "' ";
     $sql .= "LIMIT 1";
 
     $result = mysqli_query($db, $sql);
@@ -259,12 +262,13 @@ function update_page($page) {
     }
 
 }
+
 // Delete a page
 function delete_page($id) {
     global $db;
 
     $sql = "DELETE FROM pages ";
-    $sql .= "WHERE id='" . $id . "' ";
+    $sql .= "WHERE id='" . db_escape($db,$id) . "' ";
     $sql .= "LIMIT 1";
     $result = mysqli_query($db, $sql);
 
@@ -277,5 +281,18 @@ function delete_page($id) {
         db_disconnect($db);
         exit;
     }
+}
+
+// Find a page by subject ID
+function find_pages_by_subject_id($subject_id)
+{
+    global $db;
+
+    $sql = "SELECT * FROM pages ";
+    $sql .= "WHERE subject_id='" . db_escape($db,$subject_id) . "' ";
+    $sql .= "ORDER BY position ASC";
+    $result = mysqli_query($db, $sql);
+    confirm_result($result);
+    return $result; // Return assoc array
 }
 ?>
