@@ -109,4 +109,25 @@ function has_unique_page_menu_name($menu_name, $current_id="0") {
 
     return $page_count === 0;
 }
+
+
+// has_unique_admin_username('Josh')
+// * Validates uniqueness of admin.username
+// * For new records, provide only the admin username.
+// * For existing records, provide current ID as second arugment
+//   has_unique_admin_username('Josh', 3)
+function has_unique_admin_username($username, $current_id="0") {
+    global $db;
+
+    $sql = "SELECT * FROM admins ";
+    $sql .= "WHERE username='" . db_escape($db,$username) . "' ";
+    $sql .= "AND id != '" . db_escape($db,$current_id) . "'";
+
+    $admin_set = mysqli_query($db, $sql);
+    $admin_count = mysqli_num_rows($admin_set);
+    mysqli_free_result($admin_set);
+
+    return $admin_count === 0;
+}
+
 ?>

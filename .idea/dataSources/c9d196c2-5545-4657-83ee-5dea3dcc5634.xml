@@ -978,60 +978,56 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="251" parent="7" name="pages">
+    <table id="251" parent="7" name="admins">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="252" parent="7" name="subjects">
+    <table id="252" parent="7" name="pages">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="253" parent="251" name="id">
+    <table id="253" parent="7" name="subjects">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="254" parent="251" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="251" name="subject_id">
+    <column id="255" parent="251" name="first_name">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="251" name="meu_name">
+    <column id="256" parent="251" name="last_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="251" name="position">
+    <column id="257" parent="251" name="email">
       <Position>4</Position>
-      <DataType>int(3)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="251" name="visible">
+    <column id="258" parent="251" name="username">
       <Position>5</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="251" name="content">
+    <column id="259" parent="251" name="hashed_password">
       <Position>6</Position>
-      <DataType>text|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="259" parent="251" name="fk_subject_id">
-      <ColNames>subject_id</ColNames>
+    <index id="260" parent="251" name="index_username">
+      <ColNames>username</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="260" parent="251" name="PRIMARY">
+    <key id="261" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="261" parent="251" name="fk_subject_id">
-      <ColNames>subject_id</ColNames>
-      <RefSchemaName>globe_bank</RefSchemaName>
-      <RefTableName>subjects</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
     <column id="262" parent="252" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1039,22 +1035,70 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="252" name="menu_name">
+    <column id="263" parent="252" name="subject_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="264" parent="252" name="menu_name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="265" parent="252" name="position">
+      <Position>4</Position>
+      <DataType>int(3)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="252" name="visible">
+      <Position>5</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="252" name="content">
+      <Position>6</Position>
+      <DataType>text|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="268" parent="252" name="fk_subject_id">
+      <ColNames>subject_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="269" parent="252" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="270" parent="252" name="fk_subject_id">
+      <ColNames>subject_id</ColNames>
+      <RefSchemaName>globe_bank</RefSchemaName>
+      <RefTableName>subjects</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="271" parent="253" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="253" name="menu_name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="252" name="position">
+    <column id="273" parent="253" name="position">
       <Position>3</Position>
       <DataType>int(3)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="252" name="visible">
+    <column id="274" parent="253" name="visible">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="266" parent="252" name="PRIMARY">
+    <key id="275" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
