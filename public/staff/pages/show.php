@@ -17,6 +17,10 @@ $subject = find_subject_by_id($page['subject_id']);
     <div class="page show">
 
         <h1>Page: <?php echo h($page['menu_name']); ?></h1>
+        <div class="actions">
+            <a class="action" href="<?php echo url_for('/index.php?id=' . h(u($page['id'])) . '&preview=true');  ?>"
+               target="_blank">Preview</a>
+        </div>
         <table >
             <tr><td>Menu Name:</td> <td><?php echo h($page['menu_name']); ?></td></tr>
             <tr><td>Subject:</td> <td><?php echo h($subject['menu_name']); ?></td></tr>

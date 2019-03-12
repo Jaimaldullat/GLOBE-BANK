@@ -43,6 +43,11 @@ body {
     list-style: circle;
 }
 
+/* Display */
+.hide {
+    display: none;
+}
+
 /*****************
 
       HEADER
@@ -125,6 +130,9 @@ header h1 {
     flex: 1
 }
 
+.selected > a {
+    color: orange !important;
+}
 /*****************
 
   STATIC HOMEPAGE // RIGHT CONTENT
