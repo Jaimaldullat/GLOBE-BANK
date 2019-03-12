@@ -1,17 +1,17 @@
 <?php
 
 require_once('../../../private/initialize.php');
-
+require_login();
 if(!isset($_GET['id'])) {
     redirect_to(url_for('/staff/pages/index.php'));
 }
 $id = $_GET['id'];
-
+$page = find_page_by_id($id);
 if(is_post_request()) {
 
     $result = delete_page($id);
     $_SESSION['message'] = "The page was deleted successfully.";
-    redirect_to(url_for('/staff/pages/index.php'));
+    redirect_to(url_for('/staff/subjects/show.php?id=' . h(u($page['subject_id']))));
 
 } else {
     $page = find_page_by_id($id);
@@ -24,7 +24,7 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <main id="delete-page">
-    <a class="back-link" href="<?php echo url_for('/staff/pages/index.php'); ?>">&laquo; Back to List</a>
+    <a class="back-link" href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($page["subject_id"]))); ?>">&laquo; Back to Subject Page</a>
 
     <div class="delete-page">
         <h1>Delete Page</h1>

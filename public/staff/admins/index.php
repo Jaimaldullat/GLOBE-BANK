@@ -1,5 +1,6 @@
 <?php require_once '../../../private/initialize.php'; ?>
 <?php
+require_login();
 $admin_set = find_all_admins();
 ?>
 <?php $page_title = "Admins"; ?>

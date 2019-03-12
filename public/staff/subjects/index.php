@@ -3,6 +3,7 @@
 require_once '../../../private/initialize.php';
 ?>
 <?php
+require_login();
 $subject_set = find_all_subjects();
 ?>
 <?php $page_title = "Subject"; ?>
@@ -19,6 +20,7 @@ $subject_set = find_all_subjects();
             <th>Position</th>
             <th>Visible</th>
             <th>Name</th>
+            <th>Pages</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -26,12 +28,14 @@ $subject_set = find_all_subjects();
 
         <?php
         while ($subject = mysqli_fetch_assoc($subject_set)):
+            $page_count = count_pages_by_subject_id($subject['id']);
             ?>
             <tr>
                 <td><?php echo h($subject['id']); ?></td>
                 <td><?php echo h($subject['position']); ?></td>
                 <td><?php echo $subject['visible'] == 1 ? 'true' : 'false'; ?></td>
                 <td><?php echo h($subject['menu_name']); ?></td>
+                <td><?php echo h($page_count); ?></td>
                 <td><a class="action" href="<?php echo url_for('/staff/subjects/show.php?id=' . h($subject['id'])); ?>">View</a>
                 </td>
                 <td><a class="action" href="<?php echo url_for('/staff/subjects/edit.php?id=' . h($subject['id'])); ?>">Edit</a>

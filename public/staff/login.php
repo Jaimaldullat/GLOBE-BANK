@@ -1,6 +1,4 @@
-<?php
-// Include initialize.php to initialize all the needed functions before page load
-require_once '../../private/initialize.php';
+<?php require_once '../../private/initialize.php';
 ?>
 <?php
 

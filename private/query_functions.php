@@ -336,6 +336,26 @@ function find_pages_by_subject_id($subject_id, $options = [])
     return $result; // Return assoc array
 }
 
+// Count page by subject ID
+function count_pages_by_subject_id($subject_id, $options = [])
+{
+    global $db;
+
+    $visible = $options['visible'] ?? false;
+
+    $sql = "SELECT COUNT(*) FROM pages ";
+    $sql .= "WHERE subject_id='" . db_escape($db, $subject_id) . "' ";
+    if ($visible) {
+        $sql .= "AND visible = true ";
+    }
+    $result = mysqli_query($db, $sql);
+    confirm_result($result);
+    $row = mysqli_fetch_row($result);
+    mysqli_free_result($result);
+    $count = $row[0];
+    return $count; // Return assoc array
+}
+
 /*********************************
  *
  * FUNCTIONS RELATED TO ADMINS
@@ -354,9 +374,11 @@ function find_all_admins()
 }
 
 // Validate admin
-function validate_admin($admin)
+function validate_admin($admin, $options)
 {
     $errors = [];
+
+    $password_required = $options['password_required'] ?? true;
 
     // first_name
     if (is_blank($admin['first_name'])) {
@@ -391,28 +413,29 @@ function validate_admin($admin)
 
     }
 
-    // password
-    if (is_blank($admin['password'])) {
-        $errors[] = "Password cannot be blank.";
-    } elseif (!has_length($admin['password'], array('min' => 12))) {
-        $errors[] = "password must be more than 12 characters.";
-    }  elseif (!preg_match('/[A-Z]/', $admin['password'])) {
-        $errors[] = "Password must contain at least 1 uppercase letter";
-    } elseif (!preg_match('/[a-z]/', $admin['password'])) {
-        $errors[] = "Password must contain at least 1 lowercase letter";
-    } elseif (!preg_match('/[0-9]/', $admin['password'])) {
-        $errors[] = "Password must contain at least 1 number";
-    } elseif (!preg_match('/[^A-Za-z0-9\s]/', $admin['password'])) {
-        $errors[] = "Password must contain at least 1 symbol";
-    }
+    if($password_required) {
+        // password
+        if (is_blank($admin['password'])) {
+            $errors[] = "Password cannot be blank.";
+        } elseif (!has_length($admin['password'], array('min' => 12))) {
+            $errors[] = "password must be more than 12 characters.";
+        } elseif (!preg_match('/[A-Z]/', $admin['password'])) {
+            $errors[] = "Password must contain at least 1 uppercase letter";
+        } elseif (!preg_match('/[a-z]/', $admin['password'])) {
+            $errors[] = "Password must contain at least 1 lowercase letter";
+        } elseif (!preg_match('/[0-9]/', $admin['password'])) {
+            $errors[] = "Password must contain at least 1 number";
+        } elseif (!preg_match('/[^A-Za-z0-9\s]/', $admin['password'])) {
+            $errors[] = "Password must contain at least 1 symbol";
+        }
 
-    // confirm_password
-    if(is_blank($admin['confirm_password'])) {
-        $errors[] = "Confirm password cannot be blank.";
-    } elseif ($admin['password'] !== $admin['confirm_password']) {
-        $errors[] = "Password and confirm password must match.";
+        // confirm_password
+        if (is_blank($admin['confirm_password'])) {
+            $errors[] = "Confirm password cannot be blank.";
+        } elseif ($admin['password'] !== $admin['confirm_password']) {
+            $errors[] = "Password and confirm password must match.";
+        }
     }
-
 
     return $errors;
 }
@@ -455,7 +478,9 @@ function insert_admin($admin)
 function update_admin($admin) {
     global $db;
 
-    $errors = validate_admin($admin);
+    $password_sent = !is_blank($admin['password']);
+
+    $errors = validate_admin($admin, ['password_required' => $password_sent]);
     if (!empty($errors)) {
         return $errors;
     }
@@ -466,7 +491,10 @@ function update_admin($admin) {
     $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
     $sql .= "last_name='" . db_escape($db, $admin['last_name']) . "', ";
     $sql .= "email='" . db_escape($db, $admin['email']) . "', ";
-    $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "',";
+
+    if($password_sent) {
+        $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "',";
+    }
     $sql .= "username='" . db_escape($db, $admin['username']) . "' ";
     $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
     $sql .= "LIMIT 1";

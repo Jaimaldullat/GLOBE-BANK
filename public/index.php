@@ -2,7 +2,7 @@
 <?php
 $preview = false;
 if(isset($_GET['preview'])) {
-    echo $preview = $_GET['preview'] == 'true' ? true : false;
+     $preview = $_GET['preview'] == 'true' && is_logged_in() ? true : false;
 }
 $visible = !$preview;
 if (isset($_GET['id'])) {

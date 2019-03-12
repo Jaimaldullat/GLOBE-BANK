@@ -1,6 +1,6 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-
+require_login();
 $subject_set = find_all_subjects();
 $subject_count = mysqli_num_rows($subject_set) + 1;
 mysqli_free_result($subject_set);

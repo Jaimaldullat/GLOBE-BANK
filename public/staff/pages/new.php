@@ -1,6 +1,6 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-
+require_login();
 if(is_post_request()) {
 
     $page = [];
@@ -22,7 +22,7 @@ if(is_post_request()) {
 } else {
 
     $page = [];
-    $page['subject_id'] = '';
+    $page['subject_id'] = $_GET['subject_id'] ?? '';
     $page['menu_name'] = '';
     $page['position'] = '';
     $page['visible'] = '';
@@ -39,7 +39,7 @@ mysqli_free_result($page_set);
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <main id="create-subject">
-    <a class="back-link" href="<?php echo url_for('/staff/pages/index.php'); ?>">&laquo; Back to List</a>
+    <a class="back-link" href="<?php echo url_for('/staff/subjects/show.php?id=' . h(u($page["subject_id"]))); ?>">&laquo; Back to Subject Page</a>
 
     <div class="create-page">
         <h1>Create Page</h1>

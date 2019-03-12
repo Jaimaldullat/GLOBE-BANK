@@ -1,4 +1,6 @@
-<?php if (!isset($page_title)) {
+<?php
+
+if (!isset($page_title)) {
     $page_title = '';
 }
 ?>
