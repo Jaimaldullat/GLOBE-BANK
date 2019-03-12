@@ -45,6 +45,17 @@ body {
     height: 0px;
     clear: both;
 }
+/* Session Messages */
+
+#message {
+    color: #0055DD;
+    background: white;
+    border: 2px solid #0055DD;
+    padding: 1em 15px;
+    margin: 1em 30px;
+    width: 890px;
+}
+
 /*****************
 
       HEADER
@@ -71,13 +82,22 @@ header h1 {
       NAVIGATION
 
 *****************/
-
-nav{
+#staff-nav {
     font-size: 1.2rem;
     text-align: center;
+
+
 }
-nav ul {
+#staff-nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+#staff-nav ul li {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 /*****************
 
@@ -88,6 +108,7 @@ nav ul {
 main#staff {
     text-align: center;
 }
+
 /*****************
 
       Common for SUBJECTS, SUBJECT, PAGES, PAGE
