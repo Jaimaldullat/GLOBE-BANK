@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="488c6b14-4a7a-452f-880b-9c15b95d647e" name="Default Changelist" comment="Added Basic Structure Files" />
+    <list default="true" id="488c6b14-4a7a-452f-880b-9c15b95d647e" name="Default Changelist" comment="Added Basic Structure Files">
+      <change beforePath="$PROJECT_DIR$/private/db_credentials.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/db_credentials.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +64,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/staff/pages/index.php">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="-209">
+              <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/private/db_credentials.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#6#51#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/private/query_functions.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1017">
@@ -173,7 +187,6 @@
       <list>
         <option value="$PROJECT_DIR$/public/staff/pages/create.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c9d196c2-5545-4657-83ee-5dea3dcc5634/console.sql" />
-        <option value="$PROJECT_DIR$/private/db_credentials.php" />
         <option value="$PROJECT_DIR$/public/staff/subjects/create.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/private/shared/public_footer.php" />
@@ -212,6 +225,7 @@
         <option value="$PROJECT_DIR$/public/staff/pages/new.php" />
         <option value="$PROJECT_DIR$/public/staff/pages/edit.php" />
         <option value="$PROJECT_DIR$/private/query_functions.php" />
+        <option value="$PROJECT_DIR$/private/db_credentials.php" />
       </list>
     </option>
   </component>
@@ -245,26 +259,6 @@
               <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
               <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GLOBE-BANK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GLOBE-BANK" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="staff" type="462c0819:PsiDirectoryNode" />
-              <item name="subjects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -326,7 +320,7 @@
       <option name="presentableId" value="Default" />
       <updated>1552060069016</updated>
       <workItem from="1552060070688" duration="11531000" />
-      <workItem from="1552142415111" duration="91314000" />
+      <workItem from="1552142415111" duration="92575000" />
     </task>
     <task id="LOCAL-00001" summary="Added Basic Structure Files">
       <created>1552060641867</created>
@@ -346,7 +340,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102845000" />
+    <option name="totallyTimeSpent" value="104106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,13 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/private/db_credentials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1615">
@@ -592,13 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -748,6 +728,23 @@
             <element signature="n#find_admin_by_id#0;n#!!top" />
             <element signature="n#delete_admin#0;n#!!top" />
             <element signature="n#find_admin_by_username#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/private/db_credentials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#6#51#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
