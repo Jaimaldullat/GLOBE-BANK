@@ -1,0 +1,1 @@
+INSERT INTO heroku_eb7071a5fc4c02f.admins (id, first_name, last_name, email, username, hashed_password) VALUES (1, 'John', 'Public', 'john@example.com', 'johnqpublic', '$2y$10$ELGB1w7XSqjbVxdtweTGx.YeVYCjydhZJI3cPipDLRTZ940OQXs86');
