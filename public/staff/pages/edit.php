@@ -33,9 +33,8 @@ if(is_post_request()) {
 
 }
 
-$page_set = find_all_pages();
-$page_count = mysqli_num_rows($page_set);
-mysqli_free_result($page_set);
+$page_count = count_pages_by_subject_id($page['subject_id']);
+
 
 ?>
 
