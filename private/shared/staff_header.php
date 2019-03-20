@@ -22,7 +22,9 @@ if (!isset($page_title)) {
     <ul>
         <li>User: <?php echo $_SESSION['username'] ?? ''; ?></li>
         <li><a href="<?php echo url_for('/staff/index.php'); ?>">Menu</a></li>
+		<?php if(is_logged_in()){ ?>
         <li><a href="<?php echo url_for('/staff/logout.php'); ?>">Logout</a></li>
+		<?php } ?>
     </ul>
 </nav>
 
